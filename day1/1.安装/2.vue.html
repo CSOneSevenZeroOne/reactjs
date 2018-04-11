@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--V-->
+		<div id="demo"></div>
+		<script src="../../js/vue.js"></script>
+		<script>
+			//M v-for
+			new Vue({
+				//作用域
+				el:"#demo",
+				data:{
+					name:"hello world",
+					arr:['a','b','c'],
+					bool:true
+				},
+				template:`
+					<div>
+						<h1 v-if="bool" :style="{color:'red'}">{{name}}</h1>
+						<ul>
+							<li v-for="a in arr">{{a}}</li>
+						</ul>
+					</div>
+				`
+			})
+		</script>
+	</body>
+</html>

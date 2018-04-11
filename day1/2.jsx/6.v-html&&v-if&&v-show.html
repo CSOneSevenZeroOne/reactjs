@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="header"></div>
+		<!--React 的核心库-->
+		<script src="../../js/react.js"></script>
+		<!--React-->
+		<!--提供与 DOM 相关的功能   V-->
+		<script src="../../js/react-dom.js"></script>
+		<!--ReactDOM-->
+		<script src="../../js/babel.js"></script>
+		<script type="text/babel">
+			//v <= render(m)  function return就是一切 函数是第一公民
+			//v <=> template(m)
+			//JSX
+			//渲染
+			//单向数据绑定  M->V
+			//函数式编程  过滤器
+			//M
+			var data = {
+				num:20,
+				bool:true,
+				color:'red',
+			}
+			//V
+			ReactDOM.render(
+				<div>
+					{/*v-html*/}
+					<h2>
+						{(()=>{
+							return <p>123<span>456</span></p>
+						})()}
+					</h2>
+					{/*v-show*/}
+					<h2 style={{
+						display:data.bool?'block':'none'
+					}}>
+						显示或者隐藏
+					</h2>
+					{/*v-if*/}
+					{((bool)=>{
+						if(bool){
+							return "测试v-if"
+						}else{
+							return;
+						}
+					})(data.bool)}
+					{/*v-bind:  :xxx*/}
+					<p name={(()=>{
+						return "这是一个测试的名字"
+					})()}>name</p>
+					{/*@xxx  v-on:xxx*/}
+					<button onClick={()=>{
+						console.log("点击事件")
+					}}>OK</button>
+				</div>, document.querySelector("#header"))
+		</script>
+	</body>
+</html>

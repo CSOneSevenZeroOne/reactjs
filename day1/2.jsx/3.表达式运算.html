@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="header"></div>
+		<div id="container"></div>
+		<!--React 的核心库-->
+		<script src="../../js/react.js"></script>
+		<!--React-->
+		<!--提供与 DOM 相关的功能   V-->
+		<script src="../../js/react-dom.js"></script>
+		<!--ReactDOM-->
+		<script src="../../js/babel.js"></script>
+		<script type="text/babel">
+			//JSX
+			//渲染
+			//单向数据绑定  M->V
+			//函数式编程  过滤器
+			//V
+			var data = {
+				num:20,
+				bool:true,
+				color:'red'
+			}
+			ReactDOM.render(
+				<div>
+					<h1 style={{
+						color:data.color
+					}}>
+						{1+'10'+data.num}
+					</h1>
+					<h2>
+						{data.bool?'真的':'假的'}
+					</h2>
+				</div>, document.querySelector("#header"))
+		</script>
+	</body>
+</html>
