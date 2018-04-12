@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo"></div>
+    <script>
+        // 虚拟DOM对象  M
+        var DOM = {
+            el:"h4",
+            props:null,
+            children:"456"
+        }
+        // 虚拟DOM(虚拟DOM对象生成的)
+        var render = function(DOM){
+            return html =  `<${DOM.el}>${DOM.children}</${DOM.el}>`
+        }
+        //  V
+        document.querySelector("#demo").innerHTML = render(DOM)
+    </script>
+</body>
+</html>

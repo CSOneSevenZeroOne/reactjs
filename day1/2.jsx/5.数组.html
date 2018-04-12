@@ -25,17 +25,19 @@
 				bool:true,
 				color:'red',
 				arr:['a','b','c']
+				vFor(arr){
+						let htmlArr = arr.map((e,i)=>{
+							return <li key={i}>{e}</li>
+						})
+						return htmlArr
+					}
+				vIf
 			}
 			ReactDOM.render(
 				{/*v-for*/}
 				{/*v-bind:style*/}
 				<div>
-					<ul>{function(arr){
-						let htmlArr = arr.map((e,i)=>{
-							return <li key={i}>{e}</li>
-						})
-						return htmlArr
-					}(data.arr)}</ul>
+					<ul>{vFor(data.arr)}</ul>
 				</div>, document.querySelector("#header"))
 		</script>
 	</body>
