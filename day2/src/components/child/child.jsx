@@ -1,3 +1,5 @@
+import store from "../../store/store.js"
+
 import React, {
     Component
   } from 'react';
@@ -16,6 +18,10 @@ import React, {
          }}>子组件{this.props.name}</div>
      )
     }
+    componentWillMount(){
+		console.log(store);
+		console.log(store.plus(1,2))
+	}
     componentWillReceiveProps(){
         console.log("componentWillReceiveProps");
     }
