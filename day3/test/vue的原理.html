@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div id="demo">
+			<input id="input" />
+		</div>
+		<script>
+			var obj = {
+				num: 1
+			}
+			//ES5
+			Object.defineProperty(obj, "num", {
+				//设置
+				set: function(newValue) {
+					console.log('newValue:' + newValue)
+					document.getElementById("demo").innerHTML = newValue;
+				},
+				//获取
+				get: function() {
+					console.log("getValue:")
+					return '你已经成功取值'
+				}
+			})
+			//设置值  M->V
+			/*var i = 1
+			setInterval(function(){
+				obj.num = i++;
+			},1000)*/
+			obj.num = "nihao";
+			//获取值 V->M
+			/*document.getElementById("input").value
+			obj.num = document.getElementById("input").value
+			console.log()*/
+			//document.getElementById("demo").innerHTML = obj.num;
+		</script>
+	</body>
+
+</html>

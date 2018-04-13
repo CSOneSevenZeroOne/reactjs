@@ -7,7 +7,7 @@ import registerServiceWorker from './registerServiceWorker';
 import Child from './components/child/child.jsx';
 import Brother from './components/brother/brother.jsx';
 
-
+import { HashRouter, Route, Link } from "react-router-dom";
 
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
@@ -25,14 +25,18 @@ let store = createStore((state = {
 			return state
 	}
 })
-
 ReactDOM.render(
-	<Provider store={store}>
-		<div>
-			{/*<Test name="abc" />
-			<Lifecycle />*/}
-			<Brother />
-			<Child />
-		</div>
-	</Provider>, document.getElementById('root'));
+	<HashRouter>
+		<Provider store={store}>
+			<div>
+				{/*<Test name="abc" />
+				<Lifecycle />*/}
+				<Link to="/brother">brother</Link>
+				<Link to="/child">child</Link>
+				<Route exact path="/" component={Brother} />
+				<Route path="/brother" component={Brother} />
+				<Route path="/child" component={Child} />
+			</div>
+		</Provider>
+	</HashRouter>, document.getElementById('root'));
 registerServiceWorker();
